@@ -65,8 +65,8 @@ free -m | awk 'NR==2 {
     used=$3; 
     total=$2; 
     free=$4; 
-    printf "Total Memory: %.0f GB\nUsed Memory: %.0f GB              Free Memory: %.0f GB\nUsed Memory Percentage: %.2f%%  Free Memory Percentage: %.2f%%\n", 
-    total/1024, used/1024, free/1024, (used/total)*100, (free/total)*100
+    printf "Total Memory: %.0f GB\nUsed Memory: %.0f GB (%.2f%%) \nFree Memory: %.0f GB (%.2f%%)\n", 
+    total/1024, used/1024, (used/total)*100, free/1024, (free/total)*100
 }'
 echo "------------------------------------------"
 
@@ -77,8 +77,8 @@ df -h --total | awk 'END {
     free=$4; 
     used_percent=(used/total)*100; 
     free_percent=(free/total)*100; 
-    printf "Total Disk Size: %s\nUsed: %s               Free: %s\nUsed Percentage: %.2f%% Free Percentage: %.2f%%\n", 
-    total, used, free, used_percent, free_percent
+    printf "Total Disk Size: %s\nUsed: %s (%.2f%%)\nFree: %s (%.2f%%)\n", 
+    total, used, used_percent, free, free_percent
 }'
 echo "------------------------------------------"
 
