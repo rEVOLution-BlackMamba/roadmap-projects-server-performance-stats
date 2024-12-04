@@ -112,7 +112,7 @@ The `server-stats.sh` script follows this data flow:
 
 **Note:** The script creates a flag file (`/tmp/install_commands_flag`) to avoid unnecessary reinstallation of dependencies on subsequent runs.
 
- **Note:** This script was tested on the following environments:
+ **Note:** The script was tested on the following environments:
 
 - PC
 - Kubernetes (k8s) pod
